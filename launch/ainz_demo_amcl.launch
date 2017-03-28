@@ -1,0 +1,26 @@
+<launch>
+
+<node pkg="xv_11_laser_driver" type="neato_laser_publisher" name="xv_11_node">
+    <param name="port" value="/dev/ttyS5"/>
+    <param name="firmware_version" value="2"/>
+    <param name="frame_id" value="laser"/>
+  </node>
+
+  <param name="use_sim_time" value="false" />
+  
+  <!-- EDIT THIS LINE TO REFLECT THE NAME OF YOUR OWN MAP FILE 
+       Can also be overridden on the command line -->
+  <arg name="map" default="test_map2.yaml" />
+
+  <!-- Run the map server with the desired map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find rbx1_nav)/maps/$(arg map)"/>
+
+  <!-- Start ros_arduino  -->
+  <include file="$(find ros_arduino_python)/launch/arduino.launch" />
+  <!-- Start move_base  -->
+  <include file="$(find rbx1_nav)/launch/ainz_move_base.launch" />
+
+  <!-- Fire up AMCL -->
+  <include file="$(find rbx1_nav)/launch/ainz_amcl.launch" />
+  
+</launch>

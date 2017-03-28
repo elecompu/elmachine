@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node pkg="urg_node" type="urg_node" name="urg_node">
+    <!--param name="port" value="/dev/ttyS5"/-->
+    <!--param name="firmware_version" value="2"/-->
+    <!--param name="frame_id" value="laser"/-->
+  </node>
+
+ 
+ <!--  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0 0 0.0 /odom /base_link 10"/>-->
+
+  <!--node pkg="tf" type="static_transform_publisher" name="base_frame_laser" args="0.13 -0.09 0 0 0 0 /base_link /laser 10"/-->
+
+
+  <!--<node pkg="rviz" type="rviz" name="rviz" 
+    args="-d $(find hector_slam_launch)/rviz_cfg/mapping_demo.rviz"/>-->
+
+
+  <include file="$(find ros_arduino_python)/launch/arduino.launch"/> 
+
+  <!--include file="$(find hector_mapping)/launch/mapping_default.launch"/--> 
+
+  <include file="$(find rbx1_nav)/launch/ainz_move_base.launch"/> 
+
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d rviz_cfg.rviz"/>-->
+  <!--include file="$(find hector_geotiff)/launch/geotiff_mapper.launch"/-->
+  <!-- start free.launch -->
+  <include file="$(find freenect_launch)/launch/freenect.launch" />
+
+  <!-- start dynamexil.launch -->
+  <include file="$(find rbx1_dynamixels)/launch/dynamixels.launch" />
+
+   <include file="$(find rbx1_nav)/launch/ainz_rtabmap.launch"/>
+</launch>
