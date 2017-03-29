@@ -21,7 +21,7 @@ obstacle_layer:
   }
 
   point_cloud_sensorA: {
-    sensor_frame: base_footprint,
+    sensor_frame: base_link,
     data_type: PointCloud2,
     topic: obstacles_cloud,
     expected_update_rate: 0.5,
@@ -31,7 +31,7 @@ obstacle_layer:
   }
 
   point_cloud_sensorB: {
-    sensor_frame: base_footprint,
+    sensor_frame: base_link,
     data_type: PointCloud2,
     topic: ground_cloud,
     expected_update_rate: 0.5,
