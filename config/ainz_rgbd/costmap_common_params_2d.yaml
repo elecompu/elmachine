@@ -23,7 +23,7 @@ obstacle_layer:
   point_cloud_sensorA: {
     sensor_frame: base_link,
     data_type: PointCloud2,
-    topic: obstacles_cloud,
+    topic: /rtabmap/obstacles_cloud,
     expected_update_rate: 0.5,
     marking: true,
     clearing: true,
@@ -33,7 +33,7 @@ obstacle_layer:
   point_cloud_sensorB: {
     sensor_frame: base_link,
     data_type: PointCloud2,
-    topic: ground_cloud,
+    topic: /rtabmap/ground_cloud,
     expected_update_rate: 0.5,
     marking: false,
     clearing: true,
