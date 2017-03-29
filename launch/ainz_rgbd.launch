@@ -97,6 +97,7 @@
      <remap from="obstacles_cloud" to="/obstacles_cloud"/>
      <remap from="ground_cloud" to="/ground_cloud"/>
      <remap from="map" to="/map"/>
+	 <remap from="cmd_vel" to="/cmd_vel"/>
      <remap from="move_base_simple/goal" to="/planner_goal"/>
      <node pkg="move_base" type="move_base" respawn="true" name="move_base" output="screen">
         <param name="base_global_planner" value="navfn/NavfnROS"/>
