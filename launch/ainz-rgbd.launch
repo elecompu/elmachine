@@ -108,7 +108,7 @@
 
   <!--node name="az3_abtr" pkg="azimut_tools" type="azimut_abtr_priority_node">
      <remap from="abtr_cmd_eta" to="/base_controller/cmd_eta"/>
-  </node>
+  </node>-->
 
   <!-- Arbitration between teleop and planner -->
   <!--node name="register_cmd_eta" pkg="abtr_priority" type="register"
