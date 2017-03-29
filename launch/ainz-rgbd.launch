@@ -114,7 +114,7 @@
   <!--node name="register_cmd_eta" pkg="abtr_priority" type="register"
         args="/cmd_eta /teleop/cmd_eta"/>
   <node name="register_cmd_vel" pkg="abtr_priority" type="register"
-        args="/cmd_vel /planner/cmd_vel"/>
+        args="/cmd_vel /planner/cmd_vel"/>-->
   
   <!-- Throttling messages -->
   <group ns="camera">
